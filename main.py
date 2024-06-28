@@ -26,4 +26,26 @@ def display():
         print(row)
 
 
+# function to read user input
+def user_input():
+    print(f'The available index are{available_index_list}')
+    user_index = input("Enter the index (row * column) without any special characters (example: 01) :").strip()
+    row = int(user_index[0])
+    column = int(user_index[1])
+
+    # saving the row and column index to track the progress
+    user_row.append(row)
+    user_column.append(column)
+
+    # placing the character where the specified index by the user only if it is present in
+    # the list of available index
+    if (row, column) in available_index_list:
+        map_pic[row][column] = 'x'
+    else:
+        print(f"{row, column} is an invalid Index! please check the available index \n")
+
+
 display()
+user_input()
+display()
+
