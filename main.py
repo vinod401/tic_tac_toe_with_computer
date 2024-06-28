@@ -41,11 +41,10 @@ def user_input():
     # the list of available index
     if (row, column) in available_index_list:
         map_pic[row][column] = 'x'
+        available_index_list.remove((row, column))
     else:
         print(f"{row, column} is an invalid Index! please check the available index \n")
 
 
-display()
-user_input()
-display()
+
 
