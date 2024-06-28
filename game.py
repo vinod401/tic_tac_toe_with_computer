@@ -1,3 +1,6 @@
+import random
+
+
 class Game:
     def __init__(self):
         self.line1 = ["⬜️", "️⬜️", "️⬜️"]
@@ -33,3 +36,9 @@ class Game:
     def update_index(self):
         self.available_index_list.remove((self.row, self.column))
 
+    def computer_turn_easy(self):
+        index = random.choice(self.available_index_list)
+        self.row = index[0]
+        self.column = index[1]
+        self.map_pic[self.row][self.column] = 'o'
+        self.update_index()
