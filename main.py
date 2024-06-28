@@ -41,10 +41,21 @@ def user_input():
     # the list of available index
     if (row, column) in available_index_list:
         map_pic[row][column] = 'x'
+
+        # remove the index from the available index list
         available_index_list.remove((row, column))
+        display()
+
     else:
         print(f"{row, column} is an invalid Index! please check the available index \n")
 
+
+while game_on:
+    display()
+    user_input()
+
+    if len(available_index_list) == 0:
+        game_on = False
 
 
 
